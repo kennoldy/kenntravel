@@ -12,7 +12,7 @@ if (@$_SESSION['kennstravel']){
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Dashboard</title>
+    <title>Admin Kenn's Travel</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
@@ -48,9 +48,9 @@ if (@$_SESSION['kennstravel']){
       <!-- Logo -->
       <a href="index2.html" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
+        <span class="logo-mini"><b>K</b>T</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+        <span class="logo-lg"><b>Admin</b></span>
       </a>
 
       <!-- Header Navbar: style can be found in header.less -->
@@ -338,7 +338,7 @@ if (@$_SESSION['kennstravel']){
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
       <li class="header">MAIN NAVIGATION</li>
-      <li class="treeview menu-open">
+      <li class="treeview">
         <a href="#">
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           <span class="pull-right-container">
@@ -348,6 +348,18 @@ if (@$_SESSION['kennstravel']){
         <ul class="treeview-menu">
           <li><a href="index.php"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
           <li><a href="index.php"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-table"></i> <span>Customer</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="inputcustomer.php"><i class="fa fa-circle-o"></i> Input Data Customer</a></li>
+          <li><a href="daftarcustomer.php"><i class="fa fa-circle-o"></i> Daftar Data Customer</a></li>
         </ul>
       </li>
       <li class="active treeview">
@@ -364,156 +376,39 @@ if (@$_SESSION['kennstravel']){
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-files-o"></i>
-          <span>Layout Options</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right">4</span>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="pages/widgets.html">
-          <i class="fa fa-th"></i> <span>Widgets</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">new</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-pie-chart"></i>
-          <span>Charts</span>
+          <i class="fa fa-table"></i> <span>Pesawat</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-          <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+          <li><a href="inputpesawat.php"><i class="fa fa-circle-o"></i> Input Data Pesawat</a></li>
+          <li><a href="daftarpesawat.php"><i class="fa fa-circle-o"></i> Daftar Data Pesawat</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-laptop"></i>
-          <span>UI Elements</span>
+          <i class="fa fa-table"></i> <span>Reservation</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-          <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-          <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-          <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-          <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-          <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+          <li><a href="daftarreservation.php"><i class="fa fa-circle-o"></i> Daftar Reservation</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-edit"></i> <span>Forms</span>
+          <i class="fa fa-table"></i> <span>User</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-          <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+          <li><a href="inputuser.php"><i class="fa fa-circle-o"></i> Input User</a></li>
+          <li><a href="daftaruser.php"><i class="fa fa-circle-o"></i> Daftar User</a></li>
         </ul>
       </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-table"></i> <span>Tables</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="pages/calendar.html">
-          <i class="fa fa-calendar"></i> <span>Calendar</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-red">3</small>
-            <small class="label pull-right bg-blue">17</small>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="pages/mailbox/mailbox.html">
-          <i class="fa fa-envelope"></i> <span>Mailbox</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-yellow">12</small>
-            <small class="label pull-right bg-green">16</small>
-            <small class="label pull-right bg-red">5</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-folder"></i> <span>Examples</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-          <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-          <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-          <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-          <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-          <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-          <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-          <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-          <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-share"></i> <span>Multilevel</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-circle-o"></i> Level One
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-              <li class="treeview">
-                <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-        </ul>
-      </li>
-      <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -529,7 +424,7 @@ if (@$_SESSION['kennstravel']){
   <section class="content-header">
     <h1>
       Dashboard
-      <small>Version 2.0</small>
+      <small>Kenn's Travel</small>
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -543,7 +438,7 @@ if (@$_SESSION['kennstravel']){
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Daftar Pesawat</h3>
+              <h3 class="box-title">Daftar Rute</h3>
               <a href="inputrute.php" class="btn btn-sm" title="Input Rute"><i class="fa fa-plus"></i></a><br>
             </div>
             <!-- /.box-header -->
@@ -606,9 +501,9 @@ if (@$_SESSION['kennstravel']){
 
               <footer class="main-footer">
                 <div class="pull-right hidden-xs">
-                  <b>Version</b> 2.4.0
+                  <b>Kenn's Travel</b>
                 </div>
-                <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+                <strong>Copyright &copy; 2018 <a href="https://www.instagram.com/kennoldy">Kennoldy</a>.</strong> All rights
                 reserved.
               </footer>
 

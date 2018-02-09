@@ -9,15 +9,15 @@ if (@$_SESSION['kennstravel']){
   ?>
   <?php
   $ambilid = $_GET['id'];
-    $res = $cn->query("SELECT * FROM rute WHERE id='$ambilid'");
+    $res = $cn->query("SELECT * FROM transportation WHERE id='$ambilid'");
     $data = $res->fetch_array(MYSQLI_ASSOC);
   if (isset($_POST['Edit'])){
-      $depart_at = $_POST['depart_at'];
-      $rute_from = $_POST['rute_from'];
-      $rute_to = $_POST['rute_to'];
-      $price = $_POST['price'];
-      $update = $cn->query("UPDATE rute SET depart_at='$depart_at', rute_from='$rute_from', rute_to='$rute_to', price='$price' WHERE id='$ambilid'");
-      header("location:daftarrute.php");
+      $code = $_POST['code'];
+      $description = $_POST['description'];
+      $seat_qty = $_POST['seat_qty'];
+      $transportation_typeid = $_POST['transportation_typeid'];
+      $update = $cn->query("UPDATE transportation SET id='$id', code='$code', description='$description', seat_qty='$seat_qty', transportation_typeid='$transportation_typeid' WHERE id='$ambilid'");
+      header("location:daftarpesawat.php");
     }
   ?>
   <!DOCTYPE html>
@@ -359,11 +359,23 @@ if (@$_SESSION['kennstravel']){
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-          <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          <li><a href="index.php"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+          <li><a href="index.php"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
         </ul>
       </li>
       <li class="active treeview">
+        <a href="#">
+          <i class="fa fa-table"></i> <span>Customer</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="active"><a href="inputcustomer.php"><i class="fa fa-circle-o"></i> Input Data Customer</a></li>
+          <li><a href="daftarcustomer.php"><i class="fa fa-circle-o"></i> Daftar Data Customer</a></li>
+        </ul>
+      </li>
+      <li class="treeview">
         <a href="#">
           <i class="fa fa-table"></i> <span>Rute Pesawat</span>
           <span class="pull-right-container">
@@ -371,11 +383,11 @@ if (@$_SESSION['kennstravel']){
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="active"><a href="inputrute.php"><i class="fa fa-circle-o"></i> Input Rute Pesawat</a></li>
+          <li><a href="inputrute.php"><i class="fa fa-circle-o"></i> Input Rute Pesawat</a></li>
           <li><a href="daftarrute.php"><i class="fa fa-circle-o"></i> Daftar Rute Pesawat</a></li>
         </ul>
       </li>
-      <li class="active treeview">
+      <li class="treeview">
         <a href="#">
           <i class="fa fa-table"></i> <span>Pesawat</span>
           <span class="pull-right-container">
@@ -383,7 +395,7 @@ if (@$_SESSION['kennstravel']){
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="active"><a href="inputpesawat.php"><i class="fa fa-circle-o"></i> Input Data Pesawat</a></li>
+          <li><a href="inputpesawat.php"><i class="fa fa-circle-o"></i> Input Data Pesawat</a></li>
           <li><a href="daftarpesawat.php"><i class="fa fa-circle-o"></i> Daftar Data Pesawat</a></li>
         </ul>
       </li>
@@ -410,158 +422,6 @@ if (@$_SESSION['kennstravel']){
           <li><a href="daftaruser.php"><i class="fa fa-circle-o"></i> Daftar User</a></li>
         </ul>
       </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-files-o"></i>
-          <span>Layout Options</span>
-          <span class="pull-right-container">
-            <span class="label label-primary pull-right">4</span>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-          <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-          <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="pages/widgets.html">
-          <i class="fa fa-th"></i> <span>Widgets</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">new</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-pie-chart"></i>
-          <span>Charts</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-          <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-          <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-          <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-laptop"></i>
-          <span>UI Elements</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-          <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-          <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-          <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-          <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-          <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-edit"></i> <span>Forms</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-          <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-          <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-table"></i> <span>Tables</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-          <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="pages/calendar.html">
-          <i class="fa fa-calendar"></i> <span>Calendar</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-red">3</small>
-            <small class="label pull-right bg-blue">17</small>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="pages/mailbox/mailbox.html">
-          <i class="fa fa-envelope"></i> <span>Mailbox</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-yellow">12</small>
-            <small class="label pull-right bg-green">16</small>
-            <small class="label pull-right bg-red">5</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-folder"></i> <span>Examples</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-          <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-          <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-          <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-          <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-          <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-          <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-          <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-          <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
-        </ul>
-      </li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-share"></i> <span>Multilevel</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-          <li class="treeview">
-            <a href="#"><i class="fa fa-circle-o"></i> Level One
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-              <li class="treeview">
-                <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                  <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                  </span>
-                </a>
-                <ul class="treeview-menu">
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-        </ul>
-      </li>
-      <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
       <li class="header">LABELS</li>
       <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
       <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
@@ -597,20 +457,24 @@ if (@$_SESSION['kennstravel']){
             <form role="form" method="POST">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="waktu">Waktu</label>
-                  <input type="date" class="form-control" id="waktu" name="depart_at" value="<?php echo $data['depart_at']?>">
+                <div class="form-group">
+                  <label for="id">ID</label>
+                  <input type="text" class="form-control" id="id" placeholder="ID" name="id" value="<?php echo $data['id']?>">
+                </div>
+                  <label for="code">CODE</label>
+                  <input type="text" class="form-control" id="code" placeholder="Airplane's Code (ex: ARP_001)" name="code" value="<?php echo $data['code']?>">
                 </div>
                 <div class="form-group">
-                  <label for="kebrangkatan">Kebrangkatan</label>
-                  <input type="text" class="form-control" id="kebrangkatan" name="rute_from" value="<?php echo $data['rute_from']?>">
+                  <label for="description">Description</label>
+                  <input type="text" class="form-control" id="description" placeholder="About The Airplane" name="description" value="<?php echo $data['description']?>">
                 </div>
                 <div class="form-group">
-                  <label for="tujuan">Tujuan</label>
-                  <input type="text" id="tujuan" class="form-control" id="kebrangkatan" name="rute_to" value="<?php echo $data['rute_to']?>">
+                  <label for="seat_qty">Seat Quantity</label>
+                  <input type="number" id="seat_qty" class="form-control" id="seat_qty" placeholder="Airplane's Seat Quantity" name="seat_qty" value="<?php echo $data['seat_qty']?>">
                 </div>
                 <div class="form-group">
-                  <label for="harga">Harga</label>
-                  <input type="text" id="harga" class="form-control" id="kebrangkatan" name="price" value="<?php echo $data['price']?>">
+                  <label for="transportation_typeid">Transportation</label>
+                  <input type="text" id="transportation_typeid" class="form-control" id="transportation_typeid" placeholder="Airplane's ID Type" name="transportation_typeid" value="<?php echo $data['transportation_typeid']?>">
                 </div>
               </div>
               <div class="box-footer">

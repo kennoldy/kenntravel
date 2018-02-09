@@ -101,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						        <label for ="waktu">Departure Date</label>
 									<input  id="waktu" name="depart_at" type="date" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
 								</div>
-					<form action="search.php" method="get" class="sidebar-form">			
+					<form action="#" method="get" class="sidebar-form">			
 					<div class="col-md-3 form-left-agileits-submit">
 						  <input type="submit" value="search">
 					</div>

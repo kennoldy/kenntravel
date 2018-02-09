@@ -32,7 +32,7 @@
 
 <body>
 	<!--background-->
-	<h1>Groovy Login Form</h1>
+	<h1>Welcome Kenn's Travel</h1>
 	<!-- Main-Content -->
 	<div class="main-w3layouts-form">
 		<h2>Login to your account</h2>
@@ -54,7 +54,7 @@
 		</form>
 	</div>
 	<div class="copyright-w3-agile">
-		<p>&copy; 2017 Groovy Login Form. All Rights Reserved | Design by Kennoldy</p>
+		<p>&copy; 2018 Kenn's Travel All Rights Reserved | Design by Kennoldy</p>
 	</div>
 </body>
 
