@@ -71,45 +71,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="banner-text"> 
 			<h2>INDONESIA IN YOUR HAND</h2>
 			<div class="book-form" id="register">
-			<p>Pick your destination</p>
-			   <form action="#" method="post">
-					<div class="col-md-3 form-time-w3layouts">
-							<label for "keberangkatan">Travelling From</label>
-							<select class="form-control" id="keberangkatan" name="rute_from">
-								<option>From</option>
-								<option>Jakarta</option>
-								<option>Yoyakarta</option>
-								<option>Semarang</option>
-								<option>Bali</option>
-								<option>Kalimantan</option>
+			<p>Pick up your flight!</p>
+			   <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Tanggal Penerbangan</th>
+                            <th>Kebrangkatan</th>
+                            <th>Tujuan</th>
+                            <th>Harga</th>
+                            <th>Action </th>
 
-							</select>
-					</div>
-					
-					<div class="col-md-3 form-left-agileits-w3layouts ">
-							<label for"tujuan">Travelling To</label>
-							<select class="form-control" id="tujuan" name="rute_to">
-								<option>To</option>
-								<option>Jakarta</option>
-								<option>Yogyakarta</option>
-								<option>Semarang</option>
-								<option>Bali</option>
-								<option>Kalimantan</option>
-							</select>
-					</div>
-					<div class="col-md-3 form-date-w3-agileits">
-						        <label for ="waktu">Departure Date</label>
-									<input  id="waktu" name="depart_at" type="date" value="mm/dd/yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
-								</div>
-					<form action="#" method="get" class="sidebar-form">			
-					<div class="col-md-3 form-left-agileits-submit">
-						  <input type="submit" value="search">
-					</div>
-					</form>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php
+                          require "../connect.php";
+                          $sql = mysqli_query($cn, "SELECT * FROM rute");
+                          if(mysqli_num_rows($sql) == 0){
+                            echo '';
+                          }else{
+                            $id = 1;
+                            while($row = mysqli_fetch_assoc($sql)){
+                              echo'
+                              <tr>
+                                <td>'.$id.'</td>
+                                  <td>'.$row['depart_at'].'</td>
+                                  <td>'.$row['rute_from'].'</td>
+                                  <td>'.$row['rute_to'].'</td>
+                                  <td>'.$row['price'].'</td>
+                                <td>';
+                                  echo '
+                                  <center>
+                                    <a href="editrute.php?id='.$row['id'].'"title="Edit" class="btn btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                                    <a href="deleterute.php?aksi=delete&id='.$row['id'].'"title="Hapus" onclick="return confirm(\'Data Akan Dihapus?\')"class="btn btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+                                  </td>
+                                </tr>
+                                ';
+                                $id++;
+                              }
+                            }
 
-				</form>
-				<div class="clearfix"></div>
-			</div>
+                            ?>
+                          </tbody>
+              </table>
+            </div>
 			<div class="banner-btm-agileits">
 				<div class="col-md-4 bann-left-w3-agile">
 					<h3><span>24/7</span>Support</h3>
